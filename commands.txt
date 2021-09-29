@@ -1,0 +1,42 @@
+PING_IDENTITY_DEVOPS_USER=ijaffe+rohith@pingidentity.com
+PING_IDENTITY_DEVOPS_KEY=84c7f09f-7ee0-896c-4c61-f50d775d9688
+
+kubectl create secret generic devops-secret --from-literal=PING_IDENTITY_DEVOPS_USER=ijaffe+rohith@pingidentity.com --from-literal=PING_IDENTITY_DEVOPS_KEY=PING_IDENTITY_DEVOPS_KEY=84c7f09f-7ee0-896c-4c61-f50d775d9688
+
+
+
+
+kustomize build https://github.com/pingidentity/pingidentity-devops-getting-started/20-kubernetes/01-standalone/pingfederate >fuji1-pf.yaml
+
+
+
+fuji1-pf.yamlfuji1-pf.yaml
+
+
+kubectl apply -f fuji1-pf.yaml
+kubectl logs -f <your pod name here>
+
+
+
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- github.com/pingidentity/pingidentity-devops-getting-started/20-kubernetes/01-standalone/pingfederate
+
+
+kubectl get all -n default
+
+kubectl get deploy -A// listall deployments
+kubectl delete deploy pingfederate -n default// delete deployment
+
+
+git clone https://github.com/pingidentity/pingidentity-server-profiles.git
+
+
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- github.com/pingidentity/pingidentity-devops-getting-started/20-kubernetes/01-standalone/pingfederate
+
+
+kustomize build https://github.com/pingidentity/pingidentity-devops-getting-started/20-kubernetes/01-standalone/pingfederate >fuji1-pf.yaml
