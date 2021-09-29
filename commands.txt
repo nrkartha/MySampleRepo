@@ -40,3 +40,5 @@ resources:
 
 
 kustomize build https://github.com/pingidentity/pingidentity-devops-getting-started/20-kubernetes/01-standalone/pingfederate >fuji1-pf.yaml
+
+This is a new line
