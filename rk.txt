@@ -1,4 +1,6 @@
 Hi There,am just leartning
 updateing this ti new
-updating in main
+<<<<<<< HEAD
+=======
+>>>>>>> rknew
 updating in rkbranch
